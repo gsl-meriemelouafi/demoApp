@@ -1,0 +1,9 @@
+namePrefix: production-
+commonLabels:
+ variant: production
+commonAnnotations:
+  note: “Welcome to production!”
+bases:
+- ../../base
+patchesStrategicMerge:
+- deployment.yaml
