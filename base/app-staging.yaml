@@ -5,9 +5,9 @@ metadata:
   namespace: default
 spec:
   destination:
-    namespace: default
+    namespace: argocd
     server: https://kubernetes.default.svc
-  project: default
+  project: ops-central
   source:
     path: overlays/staging
     repoURL: https://github.com/gsl-meriemelouafi/demoApp.git
