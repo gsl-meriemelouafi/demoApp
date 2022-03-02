@@ -6,9 +6,15 @@ metadata:
 spec:
   destination:
     namespace: default
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
   project: default
   source:
     path: overlays/staging
-    repoURL: https://github.com/gsl-meriemelouafi/demoApp.git
+    repoURL: 'https://github.com/gsl-meriemelouafi/demoApp.git'
     targetRevision: HEAD
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
