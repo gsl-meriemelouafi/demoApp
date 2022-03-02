@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-kustomize-staging
@@ -6,15 +6,15 @@ metadata:
 spec:
   destination:
     namespace: default
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
   project: default
   source:
     path: overlays/staging
-    repoURL: 'https://github.com/gsl-meriemelouafi/demoApp.git'
+    repoURL: https://github.com/gsl-meriemelouafi/demoApp.git
     targetRevision: HEAD
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-  syncOptions:
-    - CreateNamespace=true
+#syncPolicy:
+#  automated:
+#    prune: true
+#    selfHeal: true
+#  syncOptions:
+#    - CreateNamespace=true
